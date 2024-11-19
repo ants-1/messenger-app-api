@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const UserSchema = Schema({
-    user: {
+    username: {
         type: String,
         minLength: 3,
         maxLength: 50,
