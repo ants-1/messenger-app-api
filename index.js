@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import passport from "passport";
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import dotenv from "dotenv";
 import initializePassport from "./passport/initializePassport.js";
 
@@ -37,6 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/auth", authRoutes);
+app.use("/", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port: http://localhost:${PORT}`);
