@@ -7,10 +7,16 @@ const ChatRoomSchema = Schema(
       minLength: 3,
       maxLength: 100,
       unique: true,
+      required: true,
     },
     description: {
       type: String,
       maxLength: 300,
+    },
+    host : {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
     users: [
       {
