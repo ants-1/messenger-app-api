@@ -1,7 +1,9 @@
-import { initializeLogin } from "./strategies/initializeLogin";
-import { initializeSignUp } from "./strategies/initializeSignUp";
+import initializeLogin from "./strategies/initializeLogin.js";
+import initializeSignUp from "./strategies/initializeSignUp.js";
 
-export const initializePassport = () => {
-    initializeSignUp();
-    initializeLogin();
-}
+const initializePassport = () => {
+  initializeSignUp();
+  initializeLogin();
+};
+
+export default initializePassport;

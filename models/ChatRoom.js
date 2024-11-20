@@ -1,22 +1,27 @@
 import mongoose, { Schema } from "mongoose";
 
-const ChatRoomSchema = Schema({
+const ChatRoomSchema = Schema(
+  {
     name: {
-        type: String,
-        minLength: 3,
-        maxLength: 100,
-        unique: true,
+      type: String,
+      minLength: 3,
+      maxLength: 100,
+      unique: true,
     },
     description: {
-        type: String,
-        maxLength: 300,
+      type: String,
+      maxLength: 300,
     },
-    users: [{
+    users: [
+      {
         type: Schema.Types.ObjectId,
-        ref: 'User',
-    }],
-}, {
-    Timestamp: true
-});
+        ref: "User",
+      },
+    ],
+  },
+  {
+    Timestamp: true,
+  }
+);
 
-export default mongoose.model('ChatRoom', ChatRoomSchema);
+export default mongoose.model("ChatRoom", ChatRoomSchema);
