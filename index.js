@@ -5,7 +5,8 @@ import session from "express-session";
 import passport from "passport";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import chatRoomRoutes from "./routes/chatRoomRoutes.js"
+import chatRoomRoutes from "./routes/chatRoomRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
 import dotenv from "dotenv";
 import initializePassport from "./passport/initializePassport.js";
 
@@ -41,6 +42,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/auth", authRoutes);
 app.use("/", userRoutes);
 app.use("/", chatRoomRoutes);
+app.use("/", messageRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port: http://localhost:${PORT}`);
